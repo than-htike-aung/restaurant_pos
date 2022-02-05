@@ -1,0 +1,13 @@
+a {
+    color: #343a40;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #343a40;
+}
+
+h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
