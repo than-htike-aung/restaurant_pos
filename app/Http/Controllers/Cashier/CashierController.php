@@ -26,14 +26,18 @@ class CashierController extends Controller
         foreach($tables as $table){
             $html .= '<div class="col-md-2 mb-3">' ;
             $html .=
-                '
-                    <button class= "btn btn-info btn-table" data-id="'.$table->id.'" data-name="'.$table->name.'">
-                    <img class="img-fluid"  alt="no img" src="'.url('/image/table.png').'"/>
-                    <br>
-                    <span class= "badge badge-success">'.$table->name.'</span>
-                    </button>
-                '
-            ;
+                '<button class= "btn btn-primary btn-table" data-id="'.$table->id.'" data-name="'.$table->name.'">
+                <img class="img-fluid"  alt="no img" src="'.url('/image/table.png').'"/>
+                <br>';
+                if($table->status == "available"){
+                    $html .= '<span class= "badge bg-success">'.$table->name.'</span>';
+                }else{
+                    $html .= '<span class= "badge bg-danger">'.$table->name.'</span>';
+                }
+                
+             $html .='</button>';
+                
+            
             $html .= '</div>';
         }
 
